@@ -1,0 +1,38 @@
+PERSONAL PROFILE
+
+Name: Beenish Bhatti
+Student ID: S2023065052
+Title: Software Engineering Student
+University: University of Management and Technology (UMT), Lahore Campus
+Program: BS Software Engineering (BSSE)
+Current Semester: 7th Semester (Spring 2023)
+Expected Graduation: 2027
+Email: S2023065052@umt.edu.pk
+Campus: UMT Main Campus, Lahore, Pakistan
+Location: Lahore, Pakistan
+
+SUMMARY
+Beenish is a dedicated and passionate software engineering student at the
+University of Management and Technology, Lahore, with a strong interest in
+Artificial Intelligence, Machine Learning, Natural Language Processing, and
+Full-Stack Web Development. Beenish believes in learning by building
+real-world projects, and is currently building "ALFA" Chatbot, a Retrieval-Augmented Generation chatbot, as the
+semester project for the Natural Language Processing course (CC438).And Also working on Computer Vision project which is "Age and Gender detection system.
+
+
+EXTRACURRICULAR ACTIVITIES
+Beenish is an active member of the UMT Ushers.
+
+LANGUAGES
+- Urdu (Native)
+- English (Proficient - Academic and Professional)
+- Arabic (Basic - Reading)
+
+INTERESTS
+Beenish's primary interests include:
+- Artificial Intelligence and Machine Learning
+- Natural Language Processing and Large Language Models
+- Generative AI and RAG Systems
+- Front-End Web Development
+- Python
+- Problem Solving 

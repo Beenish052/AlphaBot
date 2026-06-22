@@ -1,0 +1,197 @@
+NLP COURSE NOTES - CC438 NATURAL LANGUAGE PROCESSING
+======================================================
+University: University of Management and Technology (UMT), Lahore
+Course Code: CC438
+Course Name: Natural Language Processing
+Instructor: Mr. Waqar Ashiq
+Student: Beenish (S2023065052)
+Semester: Spring 2026
+
+CHAPTER 1: INTRODUCTION TO NLP
+================================
+Natural Language Processing (NLP) is a subfield of Artificial Intelligence that focuses on the interaction between computers and human language. NLP enables computers to understand, interpret, generate, and respond to human language in a meaningful way.
+
+Key applications of NLP include:
+- Machine Translation (e.g., Google Translate)
+- Sentiment Analysis (determining opinion polarity)
+- Text Summarization (condensing long documents)
+- Question Answering Systems (like RAG chatbots)
+- Named Entity Recognition (identifying persons, places, organizations)
+- Speech Recognition (converting speech to text)
+- Chatbots and Virtual Assistants (Siri, Alexa, ChatGPT)
+
+NLP Pipeline:
+1. Text Acquisition → 2. Text Preprocessing → 3. Feature Extraction → 4. Modeling → 5. Evaluation
+
+CHAPTER 2: TEXT PREPROCESSING
+================================
+Text preprocessing transforms raw text into a clean, structured format suitable for NLP tasks.
+
+Steps:
+1. Tokenization: Splitting text into words or sentences
+2. Lowercasing: Converting all text to lowercase
+3. Stopword Removal: Removing common words (the, is, at, which, on)
+4. Stemming: Reducing words to their root form (running → run)
+5. Lemmatization: Reducing words to dictionary form (better → good)
+6. Punctuation Removal: Removing special characters
+7. Number Normalization: Handling digits
+
+CHAPTER 3: WORD EMBEDDINGS
+============================
+Word embeddings represent words as dense numerical vectors in a continuous vector space. Similar words have similar vectors.
+
+Types of Word Embeddings:
+- Word2Vec (by Google): Skip-gram and CBOW architectures
+- GloVe (Global Vectors): Matrix factorization approach
+- FastText: Character-level n-grams
+- Sentence-BERT: Sentence-level embeddings using transformers
+- OpenAI text-embedding: State-of-the-art dense embeddings
+
+Sentence Transformers:
+Model used in ALFA project: sentence-transformers/all-MiniLM-L6-v2
+- 384-dimensional embeddings
+- Fast and lightweight
+- Good for semantic similarity tasks
+
+CHAPTER 4: TRANSFORMER ARCHITECTURE
+=====================================
+The Transformer architecture (Vaswani et al., 2017 - "Attention Is All You Need") revolutionized NLP.
+
+Key components:
+- Self-Attention Mechanism: Allows model to weigh importance of different words
+- Multi-Head Attention: Multiple parallel attention operations
+- Positional Encoding: Encodes position information
+- Feed-Forward Networks: Non-linear transformation
+- Layer Normalization: Stabilizes training
+- Encoder-Decoder structure
+
+Famous Transformer Models:
+- BERT (Bidirectional Encoder Representations from Transformers) by Google
+- GPT (Generative Pre-trained Transformer) by OpenAI
+- RoBERTa (Robustly Optimized BERT)
+- T5 (Text-to-Text Transfer Transformer)
+- LLaMA (Large Language Model Meta AI) by Meta
+
+CHAPTER 5: LARGE LANGUAGE MODELS (LLMs)
+=========================================
+Large Language Models (LLMs) are very large neural networks pre-trained on massive text datasets. They can generate human-like text and perform a wide variety of NLP tasks.
+
+Popular LLMs:
+- GPT-4o (OpenAI) - Most capable commercial model
+- LLaMA 3.1 (Meta) - Open source, used in ALFA project
+- Claude 3.5 (Anthropic) - Safety-focused LLM
+- Gemini (Google) - Multimodal LLM
+- Mistral (Mistral AI) - Efficient open source model
+
+LLM Prompting Techniques:
+1. Zero-Shot Prompting: Asking LLM without examples
+2. Few-Shot Prompting: Providing examples in the prompt
+3. Chain-of-Thought (CoT): Asking LLM to reason step by step
+4. System Prompts: Defining the AI's role and behavior
+5. RAG (Retrieval-Augmented Generation): Augmenting prompt with retrieved context
+
+CHAPTER 6: RETRIEVAL-AUGMENTED GENERATION (RAG)
+=================================================
+RAG combines information retrieval with text generation to produce accurate, context-aware responses.
+
+RAG Pipeline Steps:
+1. LOAD: Load documents from files (PDF, TXT, DOCX, etc.)
+2. SPLIT: Chunk documents into smaller pieces
+3. EMBED: Convert chunks to vector embeddings
+4. STORE: Store embeddings in a vector database (FAISS)
+5. RETRIEVE: Find relevant chunks for a user query
+6. GENERATE: Use LLM to generate answer from retrieved context
+
+Why RAG?
+- Reduces LLM hallucinations (making up facts)
+- Enables use of private/custom data
+- Keeps knowledge up-to-date without retraining
+- Provides source attribution
+
+Vector Databases for RAG:
+- FAISS (Facebook AI Similarity Search) - Used in ALFA
+- ChromaDB - Open source, easy to use
+- Pinecone - Cloud-native, scalable
+- Weaviate - Multi-modal support
+- Qdrant - High performance
+
+FAISS (Used in ALFA Project):
+- Developed by Facebook AI Research
+- Efficient similarity search
+- Supports both CPU and GPU
+- Stores vectors in index file
+- Methods: IndexFlatL2, IndexIVFFlat, IndexHNSW
+
+CHAPTER 7: PROMPT ENGINEERING
+================================
+Prompt Engineering is the practice of designing effective input prompts to get optimal outputs from LLMs.
+
+Best Practices:
+1. Be specific and clear in instructions
+2. Provide context when needed
+3. Use delimiters to separate sections
+4. Specify output format
+5. Add constraints (word limits, tone)
+6. Use role-based prompting ("You are a helpful assistant...")
+7. Include examples when appropriate
+
+System Prompt for ALFA:
+"You are ALFA (NLP-Powered Oracle for Versatile Answering), an intelligent AI assistant 
+created by Beenish. Answer questions ONLY from the provided context."
+
+CHAPTER 8: EVALUATION METRICS
+================================
+Evaluating NLP systems:
+
+For RAG Systems:
+- Context Relevancy: Are retrieved chunks relevant to the query?
+- Faithfulness: Does the answer stick to the retrieved context?
+- Answer Relevancy: Is the final answer relevant to the question?
+
+Common NLP Metrics:
+- BLEU Score: Measures n-gram overlap (used for translation/summarization)
+- ROUGE Score: Recall-oriented metric for summarization
+- BERTScore: Semantic similarity using BERT embeddings
+- Perplexity: Measures how well a language model predicts text
+- F1 Score: Harmonic mean of Precision and Recall
+
+CHAPTER 9: LANGCHAIN FRAMEWORK
+================================
+LangChain is a framework for building applications powered by LLMs.
+
+Key LangChain Components:
+- Document Loaders: Load documents (PDFLoader, TextLoader, etc.)
+- Text Splitters: RecursiveCharacterTextSplitter
+- Embeddings: OpenAIEmbeddings, HuggingFaceEmbeddings
+- Vector Stores: FAISS, ChromaDB
+- Retrievers: Similarity search on vector stores
+- Chains: Combine LLM calls with retrievers
+- Prompts: ChatPromptTemplate, MessagesPlaceholder
+- Memory: ConversationBufferMemory, chat history
+- Agents: LLMs with tools and action capabilities
+
+create_retrieval_chain: Creates an end-to-end RAG chain
+create_stuff_documents_chain: Stuffs retrieved docs into context
+create_history_aware_retriever: Reformulates query using chat history
+
+CHAPTER 10: DEPLOYMENT OF NLP APPLICATIONS
+============================================
+Deploying NLP models to production:
+
+Containerization with Docker:
+- Dockerfile: Defines the container image
+- docker-compose.yml: Multi-container orchestration
+- Environment variables: Manage secrets securely
+
+Cloud Deployment (AWS):
+- EC2: Virtual machine for backend API
+- S3: Static website hosting for frontend
+- CloudFront: CDN for fast content delivery
+- ECR: Docker image registry
+- IAM: Identity and Access Management
+
+CI/CD Pipeline (GitHub Actions):
+- Automated testing on every push
+- Build and push Docker image
+- Deploy to AWS on merge to main
+- Environment-specific configurations

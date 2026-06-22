@@ -1,0 +1,59 @@
+TECHNICAL SKILLS
+
+Programming Languages:
+- Python (Advanced) - Primary language for AI/ML and backend development
+- JavaScript (Intermediate) - Frontend and Node.js development
+- Java (Intermediate) - Object-oriented programming and Android basics
+- C/C++ (Intermediate) - System programming and algorithms
+- SQL (Intermediate) - Database querying and management
+
+AI / Machine Learning Stack:
+- LangChain (RAG systems, chains, agents)
+- HuggingFace Transformers (BERT, GPT-2, sentence-transformers)
+- scikit-learn (classification, regression, clustering)
+- TensorFlow and Keras (neural networks, deep learning)
+- PyTorch (custom model training)
+- FAISS (vector similarity search and vector databases)
+- OpenAI API (GPT-4o, embeddings)
+- Groq API (LLaMA 3, fast inference)
+
+Natural Language Processing:
+- Text preprocessing (tokenization, stemming, lemmatization, stopword removal)
+- Named Entity Recognition (NER)
+- Sentiment Analysis
+- Text Classification
+- Question Answering Systems
+- Retrieval-Augmented Generation (RAG)
+- Prompt Engineering
+- Fine-tuning Large Language Models (LLMs)
+- Word Embeddings (Word2Vec, GloVe, FastText)
+- Transformer models (BERT, RoBERTa, GPT)
+- Vector Databases (FAISS, ChromaDB, Pinecone)
+
+Web Development:
+- Frontend: HTML, CSS, JavaScript, React.js
+- Backend: Python (FastAPI, Flask, Django)
+- REST APIs
+- Git and GitHub (version control)
+
+Databases:
+- MySQL and PostgreSQL (relational)
+- MongoDB (NoSQL)
+- FAISS (vector database for AI)
+
+Tools & Platforms:
+- VS Code, PyCharm, Jupyter Notebook, Google Colab
+- Git, GitHub, GitHub Actions
+- Postman (API testing)
+- Linux/Ubuntu (server management)
+
+Methodologies:
+- Agile / Scrum
+- Software Requirements Specification (SRS) documentation
+
+CERTIFICATIONS AND COURSES
+- Marketing Project Certificate - UMT
+- Website Development - UMT
+- Project Management Course: PMBOK 7 & PMP Exam Prep [EN] - Udemy
+- English Immersion - UMT
+- Management Appreciation Certificate - UMT

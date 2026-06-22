@@ -1,0 +1,160 @@
+ALFA CHATBOT PROJECT DOCUMENTATION
+=====================================
+Project Title: ALFA - NLP-Powered Oracle for Versatile Answering
+Course: Natural Language Processing (CC438)
+University: University of Management and Technology (UMT), Lahore
+Student: Beenish
+Student ID: S2023065052
+Instructor: Mr. Waqar Ashiq
+Submission Date: June 22, 2026
+
+PROJECT OVERVIEW
+================
+ALFA (NLP-Powered Oracle for Versatile Answering) is an intelligent AI chatbot built using Retrieval-Augmented Generation (RAG) technology. ALFA is designed to answer questions about Beenish's academic profile, technical skills, projects, NLP knowledge, and general course-related queries.
+
+Unlike traditional chatbots that rely solely on pre-trained knowledge, ALFA retrieves relevant information from a personal knowledge base (custom dataset) before generating responses. This ensures that ALFA's answers are accurate, grounded, and based on actual documents.
+
+CHATBOT IDENTITY
+================
+Name: ALFA
+Full Name: NLP-Powered Oracle for Versatile Answering
+Creator: Beenish (S2023065052)
+University: University of Management and Technology, Lahore
+Course: Natural Language Processing (CC438), Spring 2026
+Personality: Professional, friendly, knowledgeable, and concise
+
+ALFA is designed to be a helpful academic assistant that can answer questions about its creator, demonstrate NLP concepts, and serve as a functional demonstration of modern RAG techniques.
+
+SYSTEM ARCHITECTURE
+===================
+ALFA consists of three main components:
+
+1. RAG Core (Notebook/Backend):
+   - Document Loading: Loads personal documents (TXT, PDF)
+   - Text Chunking: RecursiveCharacterTextSplitter (chunk_size=500, overlap=100)
+   - Embedding Model: sentence-transformers/all-MiniLM-L6-v2 (384 dimensions)
+   - Vector Database: FAISS (IndexFlatL2)
+   - Retriever: Top-6 relevant chunks per query
+   - LLM: Groq API (llama-3.1-8b-instant)
+   - Memory: Conversation history for multi-turn dialogue
+
+2. Backend API (FastAPI):
+   - RESTful API for chatbot communication
+   - Session-based conversation history
+   - Health check endpoint
+   - CORS-enabled for frontend communication
+   - Logging and error handling
+   - Deployed on AWS EC2 with Docker
+
+3. Frontend UI (HTML/CSS/JS):
+   - Modern responsive chat interface
+   - Dark theme with purple/blue gradient
+   - Real-time message display
+   - Loading indicators
+   - Clear chat functionality
+   - Hosted on AWS S3 + CloudFront
+
+TECHNOLOGY STACK
+================
+Language: Python 3.11
+Framework: LangChain v0.3
+LLM: Groq API (llama-3.1-8b-instant) - free tier
+Embeddings: sentence-transformers/all-MiniLM-L6-v2 (local, free)
+Vector Database: FAISS (faiss-cpu)
+Backend: FastAPI + Uvicorn
+Frontend: HTML, CSS (vanilla), JavaScript (vanilla)
+Containerization: Docker + Docker Compose
+Cloud: AWS EC2 (backend), AWS S3 + CloudFront (frontend)
+CI/CD: GitHub Actions
+Interface (Colab): Gradio
+
+DATASET INFORMATION
+===================
+ALFA uses a personal dataset consisting of 4 custom text documents:
+
+1. Beenish_profile.txt - Personal academic profile, bio, contact info, interests
+2. skills_projects.txt - Technical skills, academic projects, certifications
+3. nlp_notes.txt - NLP course notes, concepts, lecture summaries
+4. Alfaa_documentation.txt - This project's own documentation
+
+Total documents: 4 files
+Total approximate size: ~15,000 characters
+After chunking: Approximately 35-45 chunks
+
+PERFORMANCE METRICS
+===================
+Embedding Model: all-MiniLM-L6-v2
+- Model size: 80MB
+- Embedding dimensions: 384
+- Average embedding time: ~50ms per chunk
+
+Retrieval:
+- Search method: L2 similarity (Euclidean distance)
+- Top-k retrieved chunks: 6
+- Average retrieval time: <10ms (FAISS is very fast)
+
+LLM (Groq):
+- Model: llama-3.1-8b-instant
+- Average response time: 1-3 seconds
+- Context window: 128,000 tokens
+- Temperature: 0.3
+
+PROMPT ENGINEERING
+==================
+ALFA uses a two-stage prompting strategy:
+
+Stage 1: Query Contextualization
+Given the chat history and the latest question, reformulate it as a standalone question. This allows history-aware retrieval even when the user refers to previous messages.
+
+Stage 2: Answer Generation
+System Prompt:
+"You are ALFA (NLP-Powered Oracle for Versatile Answering), an intelligent AI assistant 
+created by Beenish for his NLP course project at UMT Lahore.
+
+You answer questions about Beenish's academic profile, projects, skills, 
+NLP knowledge, and course-related topics using ONLY the context provided.
+
+Rules:
+- Use ONLY facts from the provided context
+- If information is not in the context, say: 'I don't have that information in my knowledge base.'
+- Be friendly, professional, and concise
+- Always introduce yourself as ALFA when asked
+- Quote specific details (dates, grades, project names) exactly as written"
+
+DEPLOYMENT INFORMATION
+======================
+Backend:
+- Platform: AWS EC2 (t2.micro, Ubuntu 22.04)
+- Port: 8000
+- Container: Docker
+- API: FastAPI + Uvicorn
+- Deployment URL: [AWS EC2 Public IP/Domain]
+
+Frontend:
+- Platform: AWS S3 Static Website + CloudFront
+- URL: [CloudFront Distribution URL]
+
+Environment Variables Required:
+- GROQ_API_KEY: API key from console.groq.com (free)
+- BACKEND_URL: URL of the deployed FastAPI backend
+- ALLOWED_ORIGINS: Frontend URL for CORS
+
+KNOWN LIMITATIONS
+=================
+1. ALFA only knows information from the 4 provided text files
+2. Does not have real-time internet access
+3. May occasionally produce slightly inaccurate answers if retrieved chunks are ambiguous
+4. Context window limitation means very long conversations may lose early history
+
+FUTURE IMPROVEMENTS
+===================
+1. Add more personal documents (CV PDF, cover letter, research papers)
+2. Implement persistent vector store (rebuild only when data changes)
+3. Add a PDF upload feature so users can extend the knowledge base dynamically
+4. Integrate web search for queries outside the knowledge base
+5. Add voice input/output support
+6. Implement more sophisticated evaluation (RAGAS framework)
+7. Add user authentication for personalized sessions
+8. Deploy using Kubernetes for better scalability
+9. Implement hybrid search (dense + sparse retrieval)
+10. Add citation display (show which document chunk was used)

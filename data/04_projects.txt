@@ -1,0 +1,50 @@
+PROJECTS
+
+1. ALFA RAG Chatbot (NLP Semester Project - CC438) (Spring 2026 - Current)
+Course: Natural Language Processing (CC438)
+Role: Individual project (solo)
+Duration: Spring 2026
+Tech Stack: Python, LangChain, FAISS, Groq API, FastAPI, Docker, AWS EC2, S3,
+GitHub Actions
+
+Description:
+ALFA (NLP-Powered Oracle for Versatile Answering) is a Retrieval-Augmented Generation (RAG) chatbot developed as a semester project for the Natural Language Processing course. The chatbot uses a personal academic knowledge base containing profile information, education, skills, projects, experience, and NLP course notes. It leverages **FAISS** for semantic document retrieval, **Sentence Transformers** for text embeddings, and **Groq's LLaMA model** for generating context-aware responses. The system features an interactive **Streamlit-based web interface** and provides accurate answers by combining retrieved knowledge with conversational context.
+
+
+Key Features:
+- Custom personal dataset (academic profile, skills, projects, NLP notes)
+- Document chunking and embedding generation
+- FAISS vector database for semantic retrieval
+- Prompt-engineered, context-aware response generation
+- Conversation history maintenance across turns
+- FastAPI backend with a modern HTML/CSS/JS chat frontend
+- Deployed on AWS EC2 (backend) and AWS S3 + CloudFront (frontend)
+
+2. Student Management System (Spring 2025)
+Course: Database Systems
+Role: Developer
+Tech Stack: PHP, MySQL, HTML, CSS, Bootstrap
+
+Description:
+Designed and implemented a full-stack student management system with a
+MySQL database backend and a PHP/HTML frontend. Supports CRUD operations
+for students, courses, and grades.
+
+3. Library Management System in Java (Fall 2023)
+Course: Object-Oriented Programming
+Role: Developer
+Tech Stack: Java, OOP Design Patterns, File I/O
+
+Description:
+Developed a console-based library management system in Java using OOP
+principles including inheritance, polymorphism, encapsulation, and
+abstraction.
+
+4. Age Detection System (Spring 2026)
+Course: Computer Vision
+Role: Developer
+Tech Stack: Computer Vision, Deep Learning, Object Detection
+
+Description:
+A computer vision project that detects an object in an image/video and
+predicts the age associated with it.
