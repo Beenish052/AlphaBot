@@ -21,7 +21,7 @@ st.markdown("""
     margin-bottom: 15px;
 ">
     <h2 style="margin:0; color:#FFFFFF;">
-        🤖 ALFA
+        🤖 ALPHA
     </h2>
     <p style="color:#D1D5DB; font-size:16px; line-height:1.6; margin-top:10px;">
         <b>ALFA</b> (NLP-Powered Oracle for Versatile Answering) is a
@@ -57,7 +57,7 @@ if "pipeline" not in st.session_state:
 with st.sidebar:
     st.title(f"🤖 {BOT_NAME}")
     st.markdown(
-    "**🤖 ALFA**\n\n"
+    "**🤖 ALPHA**\n\n"
     "ALFA (NLP-Powered Oracle for Versatile Answering) is a RAG-based chatbot "
     "that provides information about Beenish's profile, skills, projects, "
     "experience, and education. It was developed as a semester project for "
@@ -77,7 +77,7 @@ with st.sidebar:
     st.markdown(
     "- Who is Beenish Bhatti?\n"
     "- What is Beenish studying?\n"
-    "- Tell me about the ALFA chatbot project\n"
+    "- Tell me about the ALPHA chatbot project\n"
     "- What are Beenish's technical skills?\n"
     "- What projects has Beenish worked on?"
 )
@@ -103,7 +103,7 @@ if not api_key_input:
 # Initialize (or re-initialize) the pipeline if needed
 if st.session_state.pipeline is None:
     try:
-        with st.spinner("Loading ALFA's knowledge base..."):
+        with st.spinner("Loading ALPHA's knowledge base..."):
             st.session_state.pipeline = RAGPipeline(api_key=api_key_input)
     except FileNotFoundError as e:
         st.error(
@@ -122,7 +122,7 @@ for turn in st.session_state.history:
         st.markdown(turn["bot"])
 
 # Chat input
-user_query = st.chat_input("Ask ALFA something about Beenish...")
+user_query = st.chat_input("Ask ALPHA something about Beenish...")
 
 if user_query:
     with st.chat_message("user"):
